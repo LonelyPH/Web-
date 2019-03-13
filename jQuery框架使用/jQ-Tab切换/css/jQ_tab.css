@@ -1,0 +1,60 @@
+/* CSS样式部分 */
+/* 初始化 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 主体代码 */
+/* ---------------------------载体盒子-------------------------- */
+#Tabbox {
+  width: 400px;
+  height: 400px;
+  margin: 50px auto;
+  /* background-color: #000; */
+}
+
+/* ---------------------------tabhead-------------------------- */
+#tabhead {
+  width: 400px;
+  height: 50px;
+  background-color: lightgreen;
+}
+
+#tabhead li {
+  width: 100px;
+  height: 50px;
+  /* background-color: lightgreen; */
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* -------------------------tabbody---------------------------- */
+#tabbody {
+  width: 400px;
+  height: 350px;
+  /* background-color: skyblue; */
+}
+
+#tabbody li {
+  width: 400px;
+  height: 350px;
+  line-height: 350px;
+  text-align: center;
+  /* background-color: red; */
+  display: none;
+}
+
+.bgcgreen {
+  background-color: lightgreen;
+}
+
+.bgcclick {
+  background-color: hotpink;
+}
