@@ -1,0 +1,425 @@
+		/*学成在线网页练习CSS层叠样式表*/
+
+		/*修改日期：*/
+
+		* {		/*CSS初始化*/
+			margin: 0;
+			padding: 0;/*清除内外边距*/
+		}
+		ul {
+			list-style: none;/*去掉列表小点样式*/
+		}
+		.clearfix:before, .clearfix:after {/*清除浮动*/
+			display: table;
+			content: "";
+		}
+		.clearfix:after {
+			clear: both;
+		}
+		.clearfix {
+			*zoom: 1;/*兼容ie 6,7*/
+		}
+		a {
+			color: #050505;
+			text-decoration: none;
+		}
+		body {
+			/*height: 3000px;*/
+			background-color: #f3f5f7;
+			position: relative;/*为满足左侧悬浮导航栏定位需要*/
+		}
+		input {
+			border: 0px;
+			box-sizing: border-box;
+		}
+		.banxin {	/*版心宽度 1200 */
+			width: 1200px;
+			margin: 0 auto;
+		}
+
+
+
+
+		/*header部分*/
+		header {
+			height: 100px;
+			overflow: hidden;/*防止外边距合并*/
+			/*background-color: green;*/
+		}
+		nav {
+			height: 42px;
+			width: 1366px;
+/*			background-color: skyblue;*/
+			margin: 29px auto;
+		}
+		/*logo部分*/
+		.logo {
+			float: left;/*左浮动*/
+		}
+		/*导航栏部分*/
+		.navbar {
+			height: 42px;
+			float: left;
+			margin-left: 70px;
+		}
+		.navbar li {
+			float: left;
+			line-height: 42px;
+		}
+		.navbar li a {
+			padding: 0 9px;/*上下0 左右9*/
+			display: inline-block;/*转换行内块*/
+			height: 42px;
+		}
+		.navbar li a:hover {
+			border-bottom: 2px solid #00a4ff;/*鼠标经过时显示底部边框*/
+		}
+		/*搜索框部分*/
+		.searcher {
+			width: 410px;/*360 + 50  38 40*/
+			height: 40px;
+			border: 1px solid #00a4ff;/*边框*/
+			float: right;
+			position: relative;
+			z-index: 10;
+		}
+		.searcher input[type=text] {	/*使用属性选择器对搜索框进行设置*/
+			/*background-color: red;*/
+			width: 360px;
+			height: 40px;
+			padding-left: 20px;/*左内边距*/
+			float: left;
+		}
+		.searcher input[type=submit] {/*使用属性选择器对搜索按钮进行设置*/
+			width: 50px;
+			height: 40px;
+			background: #00a4ff url(images/searcher_03.png) center center no-repeat;/*设置搜索按钮的图标 设置为背景图片水平垂直居中*/
+			float: left;
+		}
+		/*个人中心*/
+		.personal {
+			float: right;/*右浮动*/
+			height: 42px;
+			line-height: 42px;
+			margin-left: 31px;/*左外边距*/
+		}
+		.ling {
+			margin-left: 33px;/*左外边距*/
+		}
+		.touxiang {
+			margin: 0 6px 0 30px;/*上 右 下 左*/
+			vertical-align: middle;/*图片和文字 中线对齐*/
+		}
+		/*banner部分*/
+		.banner {
+			height: 420px;
+			background-color: #1c036c;/*banner背景色*/
+		}
+		.banner-in {
+			height: 420px;
+			background: url(images/php_06.png) 0 0 no-repeat; /*banner背景图*/
+			position: relative;/*子绝父相  与b_circle关联*/
+		}
+		/*左侧导航栏*/
+		.slidebar {		/*左侧导航栏宽高 背景颜色及透明度 左浮动*/
+			width: 190px;
+			height: 420px;
+			background:rgba(0,0,0,0.3);
+			float: left;
+			position: relative;
+			z-index: 2;
+		}
+		.slidebar li a {	/*导航栏选项 字体大小 颜色*/
+			color: #fff;
+			font-size: 14px;
+			padding-left: 20px;
+			display: inline-block;/*转换行内块*/
+			height: 45px;
+			width: 170px;
+			line-height: 45px;/*垂直居中*/
+			background: url(images/jiantou_03.png) 170px 18px  no-repeat;/*设置箭头图像的位置*/
+		}
+		.slidebar li a:hover {	/*设置鼠标经过时变换字体颜色及背景图片*/
+			color: #00b4ff;
+			background: url(images/lansejiantou_03.png) 170px 18px  no-repeat;
+		}
+		/*右侧 我的课程表*/
+		.classtable {
+			float: right;/*右浮动*/
+			width: 228px;
+			height: 300px;
+			background-color: #fff;
+			margin: 60px 0;/*设置顶部外边距*/
+		}
+		.classtable dt {
+			height: 48px;
+			background-color: #9bceea;
+			text-align: center;/*文本水平居中*/
+			line-height: 48px;/*垂直居中*/
+			color: #fff;
+			font-size: 18px;
+			font-family: "黑体";
+			font-weight: 700;
+			letter-spacing: 3px;/*文字间距*/
+			margin-bottom: 10px;/*底部外边距*/
+		}
+		.classtable dd {
+			width: 200px;
+			height: 60px;
+			border-bottom: 1px solid #efefef;
+			margin: 0 0 0 14px;/*左外边距*/
+			box-sizing: border-box;
+			padding-top: 10px; 
+		}
+		.classtable dd:nth-child(n+4) {	/*为最后一个dd设置高度和边框*/
+			border: 0;
+		}
+		.classtable dd h4 a {
+			font-size: 16px;
+			font-weight: normal;
+			color: #5f5f5f;
+		}
+		.classtable dd h4 a:hover {	/*鼠标经过时字体变色*/
+			color: #00a4ff;
+		}
+		.classtable dd p a {
+			font-size: 12px;
+			font-weight: normal;
+			color: #bfbfbf;
+		}
+		.classtable dd p a:hover {	/*鼠标经过时字体变色*/
+			color: #00a4ff;
+		}
+		.classtable dd h5 a {	/*设置h5中a的宽高 边框 */
+			width: 200px;
+			height: 40px;
+			display: inline-block;/*转换行内块*/
+			border: 1px solid #22b0ff;
+			line-height: 40px;
+			text-align: center;
+			font-size: 16px;
+			color: #00a4ff;
+		}
+		.classtable dd h5 a:hover {	/*鼠标经过时改变字体颜色 背景颜色*/
+			color: #fff;
+			background-color: #22b0ff;
+		}
+		/*banner圆点滚动条*/
+		.b_circle {
+			width: 190px;
+			height: 22px;
+			/*background: rgba(255, 255, 255, 0.2);*/
+			position: absolute;/*绝对定位 完全脱标 子绝b_circle 父相banner_in*/
+			left: 505px;/*使模块水平居中*/
+			bottom: 30px;/*距离父级底部30px*/
+		}
+		.b_circle li {
+			float: left;
+			width: 14px;
+			height: 14px;
+			background: rgba(255, 255, 255, 0.4);
+			margin: 4px 8px;
+			border-radius: 50%;/*圆角矩形*/
+		}
+		.b_circle li:first-child {/*第一个圆点加宽*/
+			width: 18px;
+			border-radius: 10px;/*圆角矩形*/
+			background-color: #fafafa;
+		}
+		.b_circle li:hover {/*鼠标经过圆点时改变颜色*/
+			background-color: #fafafa;
+		}
+		/*精品推荐*/
+		.jingpin {
+			height: 60px;
+			line-height: 60px;
+			background-color: #fff;
+			margin-top: 8px;
+			box-shadow: 0 3px 3px rgba(0,0,0,0.1);/*盒子阴影 水平 垂直 模糊距离 颜色和透明度*/
+		}
+		.jingpin ul li {
+			display: inline-block;/*转换行内块*/
+			float: left;
+		}
+		.jingpin ul li a {
+			font-size: 16px;
+			padding: 0 30px;
+			border-right: 1px solid #bfbfbf;
+		}
+		.jingpin li:first-child a {
+			font-weight: 700;
+			color: #00a4ff;
+		}
+		.jingpin li:nth-child(n+7) a {/*结构伪类选择器 选择大于7的标签*/
+			border: 0;
+		}
+		.jingpin li:last-child {/*使 修改兴趣 右浮动*/
+			float: right;
+		}
+		.jingpin li:last-child a {
+			color: #00a4ff;
+			font-size: 14px;
+		}
+		.jingpin ul li a:hover {/*鼠标经过时变色*/
+			color: #00a4ff;
+		}
+		/* 触发 点击查看更多 */
+		.chufa {
+			position: fixed;
+			top: 360px;
+			left: 0;
+			font-size: 14px;
+		}
+		.open {
+			background-color: #fff;
+		}
+		.close {
+			background-color: rgb(141, 140, 140);
+		}
+		/*左边悬浮导航栏*/
+		.left_slidebar {	/*设置高度宽度 背景色 固定定位位置*/
+			width: 180px;
+			height: 425px;
+			background-color: #fff;
+			position: fixed;
+			top: 200px;
+			left: 50px;
+			z-index: 1;
+			/* display: none; */
+		}
+		.left_slidebar ul {	/*为ul设置上左外边距*/
+			margin-top: 18px;
+			margin-left: 25px; 
+		}
+		.left_slidebar li {	/*为li设置下外边距 以高度剩余法设置li与li的距离*/
+			margin-bottom: 15px;
+		}
+		.left_slidebar li a {	/*设置字号*/
+			font-size: 14px;
+		}
+		.left_slidebar li a:hover {	/*鼠标经过时字体变色*/
+			color: #00a4ff;
+		}
+		/*精品推荐图片模块*/
+		.p_jingpin {
+			margin-top: 21px;
+		}
+		.p_jingpin div:first-child {
+			height: 56px;
+			/*background-color: skyblue;*/
+		}
+		.p_jingpin div:first-child h5 {
+			height: 56px;
+			line-height: 56px;
+			font-size: 20px;
+			color: #494949;
+			float: left;
+		}
+		.p_jingpin div:first-child a {
+			height: 56px;
+			line-height: 56px;
+			font-size: 14px;
+			color: #a5a5a5;
+			margin-right: 30px;
+			float: right;
+		}
+		.p_jingpin div:first-child a:hover {
+			color: #00a4ff;
+		}
+
+		.first-line li,
+		.second-line li {
+			width: 228px;
+			height: 270px;
+			margin-right: 15px;/*所有li设置右外边距 超出版心宽度 下面将不需要外边距的li取消外边距*/
+			overflow: hidden; /*内容溢出隐藏*/
+			float: left;
+		}
+		.first-line li {
+			margin-bottom: 15px; /*给第一行的所有li增加底部外边距*/
+		}
+		.first-line li:last-child,
+		.second-line li:last-child {
+			margin: 0;/*防止超出版心宽度 取消右侧上下2个li的右外边距*/
+		}
+		.first-line li a h5,
+		.second-line li a h5 {
+			line-height: 20px;
+			font-size: 14px;
+			font-weight: normal;
+		}
+		.first-line li p,
+		.second-line li p {
+			font-size: 12px;
+			color: #999;
+		}
+		.first-line li span,
+		.second-line li span {
+			color: #ff7c2d;
+		}
+		.first-line li a h5,
+		.second-line li a h5,
+		.first-line p,
+		.second-line p {
+			padding: 0 20px 0 24px;
+			margin-top: 12px; 
+		}
+		.first-line li:hover,
+		.second-line li:hover {
+			box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+		}
+		/*页面底部*/
+		footer {	/*通栏 高度270 的底部 上外边距50*/
+			height: 270px;
+			background-color: #fff;
+			margin-top: 50px; 
+		}
+		footer .banxin {/*底部版心盒子高度270*/
+			height: 270px;
+		}
+		.bottombox div {/*内部小DIV全部设置高度270 左浮动*/
+			height: 270px;
+			float: left;
+		}
+		.bottombox div:first-child {	/*宽度剩余法 第一个小DIV宽664*/
+			width: 664px;
+		}
+		.bottombox div:first-child img {	/*第一个小DIV里的图片框 外边距 上33 下14 左20*/
+			margin: 33px 0 14px 20px; 
+		}
+		.bottombox div:first-child p {	/*第一个小DIV里的P标签左外边距20 及其内文字样式*/
+			color: #666;
+			font-size: 12px;
+			margin-left: 20px; 
+		}
+		.bottombox div:nth-child(2) ul,
+		.bottombox div:nth-child(3) ul {/*宽度剩余法 第2,3个盒子宽度224*/
+			width: 224px; 
+		}
+		.bottombox li:first-child a {	/*所有小DIV里第一个li的a标签中字体样式*/
+			font-size: 16px;
+			color: #333;
+		}
+		.bottombox li:first-child {		/*所有小DIV里第一个li的外边距 上33 下15*/
+			margin: 33px 0 15px 0;
+		}
+		.bottombox li:nth-child(n+2) {	/*所有小DIV里第2到 n个li的外边距 上3 下3*/
+			margin: 3px 0 3px 0;
+		}
+		.bottombox li:nth-child(n+2) a {	/*所有小DIV里第2到 n个li中的a标签内字体样式*/
+			font-size: 12px;
+			color: #333;
+		}
+		.bottombox li a:hover {
+			color: #00a4ff;
+		}
+		/* JS动态添加样式 */
+		.sousuo {
+			width: 360px;
+			background-color: #fff;
+			border: 1px solid lightgray;
+			position: fixed;
+			top: 70px;
+			left: 762px;
+		}
+		/*本页面CSS层叠样式完毕*/

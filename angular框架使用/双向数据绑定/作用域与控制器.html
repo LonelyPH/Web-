@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>作用域对象与控制器对象</title>
+</head>
+<body ng-app>
+  <div ng-controller = 'MyController'>
+    <input type="text" ng-model = 'firstName'>
+    <input type="text" ng-model = 'lastName'>
+    <p>姓名1：{{firstName + '-' + lastName}}</p>
+    <p>姓名2：{{getName()}}</p>
+  </div>
+
+  <script src="../angular-1.2.29/angular.js"></script>
+  <script>
+    function MyController ($scope) {
+      $scope.firstName = 'Liu';
+      $scope.lastName = 'peihua';
+      $scope.getName = function () {
+        return this.firstName + ' ' + this.lastName;
+      }
+    }
+  </script>
+</body>
+</html>

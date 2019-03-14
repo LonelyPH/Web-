@@ -1,0 +1,50 @@
+/*滑动门案例 CSS代码*/
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: url(images/wx.jpg) repeat-x; 
+}
+ul {
+	list-style: none;
+	height: 74px;
+	width: 880px;
+	float: left;
+	margin-left: 100px;
+}
+div {
+	height: 74px;
+}
+.nav img {
+	height: 44px;
+	margin-top: 14px;
+	margin-left: 200px; 
+	float: left;
+}
+.nav ul li {
+	float: left;
+	margin: 21px 10px 0 10px;
+}
+.nav ul li a {
+	display: inline-block;
+	text-decoration: none;
+	line-height: 33px;
+	font-size: 14px;
+	color: #fff;
+	background: url(images/to.png) no-repeat;
+	padding-left: 15px;
+}
+.nav li a span {
+	display: inline-block;
+	line-height: 33px;
+	background: url(images/to.png) right no-repeat;
+	padding-right: 15px; 
+
+}
+.nav li a:hover {
+	background-image: url(images/ao.png);
+}
+.nav li a:hover span {
+	background-image: url(images/ao.png);
+}

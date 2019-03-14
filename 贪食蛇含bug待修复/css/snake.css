@@ -1,0 +1,7 @@
+#map {
+  width: 800px;
+  height: 400px;
+  margin: 50px auto;
+  background-color: #000;
+  position: relative;/* 子绝父相  */
+}

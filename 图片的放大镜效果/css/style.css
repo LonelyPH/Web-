@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#box {
+  margin: 100px 0 0 100px;
+  width: 350px;
+  height: 350px;
+  position: relative;
+}
+.small {
+  width: 350px;
+  height: 350px;
+  position: relative;
+}
+.mask {
+  width: 175px;
+  height: 175px;
+  display: none;
+  background-color: rgba(248, 193, 10, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: move;
+}
+.big {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  left: 400px;
+  top: 0;
+}
+.big img {
+  position: absolute;
+}

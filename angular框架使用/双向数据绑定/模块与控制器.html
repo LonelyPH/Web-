@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>模块与控制器</title>
+</head>
+<body ng-app = 'myApp'>
+  <div ng-controller = 'MyController1'>
+    <input type="text" ng-model = 'empName'>
+    <p>员工名1：{{empName}}</p>
+  </div>
+  <div ng-controller = 'MyController2'>
+    <input type="text" ng-model = 'empName'>
+    <p>员工名2：{{empName}}</p>
+  </div>
+  <!-- <script src="../angular1.2.29/angular.js"></script> -->
+  <script src="../angular-1.5.5/angular.js"></script>
+  <script>
+    // function MyController1 ($scope) {
+    //   $scope.empName = 'tom';
+    // }
+    // function MyController2 ($scope) {
+    //   $scope.empName = 'jack';
+    // }
+
+    // 创建点前应用的模块对象：
+    // var myModule = angular.module ('myApp', []);
+    // myModule.controller ('MyController1', function ($scope) {
+    //   $scope.empName = 'tom';
+    // })
+    // myModule.controller ('MyController2', function ($scope) {
+    //   $scope.empName = 'tim';
+    // })
+
+    // 链式调用：
+    // angular.module ('myApp', [])
+    //   .controller ('MyController1', function ($scope) {//模块对象的方法执行完返回的就是模块对象本身
+    //   //$scope写法问题（js代码压缩时会把所有的局部变量压缩成abcd等）
+    //     $scope.empName = 'tom';
+    //   })
+    //   .controller ('MyController2', function ($scope) {
+    //     $scope.empName = 'tim';
+    //   })
+    /*
+      上面写法的问题：
+      1、形参只能写固定的变量名$scope;
+      2、一旦文件压缩，将不能使用，会报错。
+    */
+    // 优化：
+    angular.module ('myApp', [])
+      .controller ('MyController1', ['$scope', function (a) {//模块对象的方法执行完返回的就是模块对象本身
+      //$scope写法问题（js代码压缩时会把所有的局部变量压缩成abcd等）
+        a.empName = 'tom';
+      }])
+      .controller ('MyController2', ['$scope', function (a) {//显示声明依赖注入
+        a.empName = 'tim';
+      }])
+  </script>
+</body>
+</html>

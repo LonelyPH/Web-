@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>模拟留言板</title>
+  <style>
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+<body ng-app = "myApp" ng-controller = "MyCtrl">
+  <h2>模拟留言板</h2>
+  <textarea ng-model = "massage" cols="30" rows="10" ></textarea><br>
+  <button ng-click = "save()">SAVE</button>
+  <button ng-click = "read()">READ</button>
+  <button ng-click = "removed()">DEL</button>
+  <p ng-bind = " '剩余字数：' + getWordNum()"></p>
+
+
+  <script src="../angular-1.5.5/angular.js"></script>
+  <script src="./ang-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>人员信息列表</title>
+</head>
+<body ng-app ="myApp">
+  <div ng-controller = "MyCtrl">
+    <ul>
+      <!-- <li ng-repeat = "x in personmsg">{{$index + 1 + '姓名：' + x.name + ' ' + '年龄：' + x.age}}</li> -->
+      <li ng-repeat = "x in personmsg" ng-bind = "$index + 1 + '姓名：' + x.name + ' ' + '年龄：' + x.age"></li>
+    </ul>
+  </div>
+
+  <script src="../angular-1.5.5/angular.js"></script>
+
+  <script>
+    angular.module ('myApp',[])
+      .controller ('MyCtrl',['$scope', function ($scope) {
+        $scope.personmsg = [
+          {name: 'tom1', age: 21},
+          {name: 'tom2', age: 22},
+          {name: 'tom3', age: 23},
+          {name: 'tom4', age: 24},
+          {name: 'tom5', age: 25}
+        ]
+      }])
+  </script>
+</body>
+</html>

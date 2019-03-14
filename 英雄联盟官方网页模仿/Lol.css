@@ -1,0 +1,178 @@
+/*LOL官方网页CSS3层叠样式*/
+/*初始化网页*/
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;/*去掉列表小点样式*/
+		}
+		a {
+			text-decoration: none;
+		}
+		.clearfix:before, .clearfix:after {/*清除浮动*/
+			display: table;
+			content: "";
+		}
+		.clearfix:after {
+			clear: both;
+		}                                     
+		.clearfix {
+			*zoom: 1;/*兼容ie 6,7*/
+		}
+		body {
+			height: 1600px;
+		}
+		body header {
+			font: 12px/1.5 tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif;
+		}
+		header {
+			height: 78px;
+			background-color: #000;
+		}
+/*自定义层叠样式表*/
+		.daohang {
+			height: 78px;
+			width: 1358px;
+			margin: 0 auto;
+			/*background-color: #777;*/
+		}
+		.logo {
+			width: 132px;
+			height: 49px;
+			float: left;
+			margin-top: 14px;
+		}
+		.daohang a img {
+			width: 132px;
+			height: 49px;
+
+		}
+		.daohang ul {
+			width: 55%;
+			height: 78px;
+			margin-left: 30px;
+			padding-top: 16px;
+			float: left;
+			box-sizing: border-box;
+		}
+		.daohang ul li {
+			float: left;
+			list-style: none;
+			height: 78px;
+			width: 20%;
+			text-align: center;
+		}  
+		.daohang li a {
+			/*margin-top: 16px; */
+			width: 100%;
+			height: 100%;
+			display: block;
+			text-align: center;
+		}
+		.daohang li a span:first-child {
+			text-align: center;
+			font-size: 18px;
+			color: #fff;
+			letter-spacing: 1px;
+			display: block;
+		}
+		.daohang li a span:last-child {
+			text-align: center;
+			display: block;
+			color: #aeaeae;
+			letter-spacing: 1px;
+			font-size: 11px;
+			margin-top: -1px;	
+		}
+		.log_in1 {
+			width: 244px;
+			height: 78px;
+			float: right;
+		}
+		.phone_logo {
+			float: right;
+		}
+		.log_in2 {
+			width: 48px;
+			height: 48px;
+			margin-top: 14px;
+			float: left; 
+		}
+		.log_in2 span {
+			width: 48px;
+			height: 48px;
+			display: block;
+			background-size: 405px 178px;
+			background: url(images/topfoot-spr.png) -304px -84px no-repeat;
+		}
+		.log_in2 img {
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			margin: 6px 0 0 6px;
+			float: left;
+		}
+		.log_in3 {
+			width: 176px;
+			height: 78px;
+			float: left;
+		}
+		.log_in3 p {
+			display: block;
+			font-size: 16px;
+			width: 176px;
+			height: 78px;
+			line-height: 78px;
+			padding-left: 10px; 
+			color: #fefefe
+		}
+		.log_in3 p a {
+			color: #fff3d0;
+		}
+		.phone_logo {
+			float: right;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			margin: 17px 31px 0 0;
+			text-align: center;
+		}
+		.phone_logo a {
+			display: inline-block;
+			width: 16px;
+			height: 24px;
+			text-align: center;
+			vertical-align: middle;
+			background: url(images/topfoot-spr.png) -357px -84px no-repeat;
+		}
+		
+		.search {
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			margin: 17px 12px 0 0;
+			text-align: center;
+			float: right;
+		}
+		.search i {
+			width: 23px;
+			height: 24px;
+			display: inline-block;
+			text-align: center;
+			vertical-align: middle;
+			background: url(images/topfoot-spr.png) -381px -39px no-repeat;
+		}
+		.banner {
+			width: 100%;
+			height: 990px;
+			background: url(images/bg.jpg) 50% 0 no-repeat;
+		}
+		.bgc {
+			width: 1000px;
+			height: 990px;
+			margin: 0 auto;
+			background: url(images/bgc.jpg) 0 0 no-repeat;
+			position: relative;
+
+		}

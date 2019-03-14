@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>价格计算器</title>
+</head>
+<body ng-app = "myApp">
+  <div ng-controller = "MyCtrl">
+    <h2>价格自动计算器</h2>
+    数量：<input type="number" ng-model = "count">
+    价格：<input type="number" ng-model = "price">
+    <!-- <p>总价：{{count * price}}</p> -->
+    <p>总价：{{totalprice()}}</p>
+  </div>
+
+
+  <script src="../angular-1.5.5/angular.js"></script>
+  <script>
+    angular.module('myApp', [])
+      .controller('MyCtrl', ['$scope', function ($scope) {
+        $scope.count = 1;
+        $scope.price = 20;
+        $scope.totalprice = function () {
+          return $scope.count * $scope.price;
+        }
+      }])
+  </script>
+</body>
+</html>

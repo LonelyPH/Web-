@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>切换显示隐藏</title>
+</head>
+<body ng-app = "myApp">
+  <div ng-controller = "MyCtrl">
+    <button ng-click = "changeDisplay()" ng-bind = "btnname"></button>
+    <!-- ng-show的值为true时显示，ng-hide的值为true是隐藏   -->
+    <p ng-show = "isShow">ng-show</p>
+    <p ng-hide = "isShow">ng-hide</p>
+  </div>
+</body>
+
+<script src="../angular-1.5.5/angular.js"></script>
+<script>
+  angular.module ('myApp', [])
+    .controller ('MyCtrl', ['$scope', function ($scope) {
+      var flag = 0;
+      $scope.btnname = '显示hide';
+      $scope.isShow = true;
+      $scope.changeDisplay = function () {
+        if (flag) {
+          flag = 0;
+          this.btnname = '显示hide'
+          this.isShow = !this.isShow;
+        }
+        else {
+          flag = 1;
+          this.btnname = '显示show'
+          this.isShow = !this.isShow;
+        }
+      }
+    }])
+</script>
+</html>

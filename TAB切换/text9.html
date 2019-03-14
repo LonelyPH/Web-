@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Table栏内容切换</title>
+
+  <style>
+    /* CSS初始化 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    .box {
+      width: 399px;
+      height: 300px;
+      border: 1px solid #ccc;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+    .hd {
+      height: 45px;
+    }
+    .hd ul li {
+      display: inline-block;
+      width: 90px;
+      background-color: pink;
+      line-height: 45px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .hd ul li:nth-child(2) {
+      margin: 0 4px 0 8px;
+    }
+    .hd ul li:nth-child(3) {
+      margin: 0 8px 0 4px;
+    }
+    .hd ul li.current {
+      background-color: purple;
+    }
+    .bd div {
+      height: 255px;
+      background-color: purple;
+      display: none;
+    }
+    .bd div.current {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="hd" id="hd">
+      <ul>
+        <li>体育</li>
+        <li>娱乐</li>
+        <li>新闻</li>
+        <li>综合</li>
+      </ul>
+    </div>
+    <div class="bd" id="bd">
+      <div>体育</div>
+      <div>娱乐</div>
+      <div>新闻</div>
+      <div>综合</div>
+    </div>
+  </div>
+
+  <script>
+    var lis = document.querySelectorAll('#hd ul li');
+    // var divs = document.querySelectorAll('#bd div');
+    // console.log(divs.length);
+    var i = 0,len = lis.length;
+    // 鼠标经过li时，取消其他li的高亮，高亮显示该li背景
+    for (; i < len ; i++) {
+      var li = lis[i];
+
+      li.setAttribute('flag',i);//获取索引下标
+
+      li.onmouseover = function () {
+        for (i = 0; i < len; i++) {
+          lis[i].className = '';
+        }
+        this.className = 'current';
+        // 单鼠标进过li时 根据获取的索引下标找到对应的div并显示
+        var divs = document.querySelectorAll('#bd div');
+        var flag = parseInt(this.getAttribute('flag'));
+        var divLen = divs.length;
+        // 隐藏所有div
+        for (i = 0; i < divLen; i++) {
+          var div = divs[i];
+          div.className = '';
+        }
+        // 显示具有相应索引下标的div
+        divs[flag].className = 'current';
+      }
+    }
+
+
+  </script>
+</body>
+</html>

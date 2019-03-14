@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>style和class的设置</title>
+  <style>
+    .o {
+      background-color: hotpink;
+    }
+
+    .j {
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body ng-app="myApp">
+  <div ng-controller="MyCtrl">
+    <div ng-mouseenter="enter()" ng-mouseleave="leave()" ng-style="myStyle"></div>
+
+    <ul>
+      <!-- 隔行变色  运用ng-class（样式类后面的值为true（使用）和false（不使用））和$odd索引为偶数返回true、$even索引为奇数返回true -->
+      <li ng-class="{o: $odd, j: $even}" ng-repeat="x in colr" ng-bind="x.nub + '-----------'"></li>
+    </ul>
+  </div>
+
+  <script src="../angular-1.5.5/angular.js"></script>
+  <script>
+    angular.module('myApp', [])
+      .controller('MyCtrl', ['$scope', function ($scope) {
+        $scope.myStyle = {
+          width: '200px',
+          height: '200px',
+          background: 'hotpink'
+        }
+        //鼠标移入移出切换颜色
+        $scope.enter = function () {
+          this.myStyle.background = 'skyblue';
+        }
+        $scope.leave = function () {
+          this.myStyle.background = 'hotpink';
+        }
+        //隔行变色
+        $scope.colr = [{
+            nub: 1
+          },
+          {
+            nub: 2
+          },
+          {
+            nub: 3
+          },
+          {
+            nub: 4
+          },
+          {
+            nub: 5
+          }
+        ];
+      }])
+  </script>
+</body>
+
+</html>
