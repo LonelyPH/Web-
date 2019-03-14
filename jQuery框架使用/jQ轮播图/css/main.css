@@ -1,0 +1,101 @@
+/* css */
+/*CSS初始化-----------------------------------------*/
+* {
+  /*清除内外边距*/
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /*去掉列表小点样式*/
+  list-style: none;
+  text-decoration: none;
+}
+
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* 兼容ie 6,7 */
+.clearfix {
+  *zoom: 1;
+}
+
+/* CSS主样式 ----------------------------------------------------------*/
+#container {
+  width: 600px;
+  height: 400px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 翻页标签------------ */
+#container>span {
+  /* display: block; */
+  width: 40px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, .3);
+  line-height: 60px;
+  text-align: center;
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  display: none;
+}
+
+#left {
+  position: absolute;
+  left: 0;
+  top: 170px;
+}
+
+#right {
+  position: absolute;
+  left: 560px;
+  top: 170px;
+}
+
+/* 图片标签----------- */
+#imglist {
+  width: 4200px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#imglist img {
+  float: left;
+}
+
+/* 导航小点----------- */
+#pointsContainer {
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  right: 225px;
+  bottom: 20px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#pointsContainer span {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  margin: 7px 6px 7px 8px;
+  float: left;
+  cursor: pointer;
+}
+
+/* js动态CSS ------------------------------------------------------------*/
+/* 翻页标签---------- */
+/* .span-display {
+  display: block;
+} */
