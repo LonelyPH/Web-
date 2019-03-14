@@ -47,6 +47,7 @@
   color: #ccc;
   cursor: pointer;
   display: none;
+  user-select: none;
 }
 
 #left {
@@ -99,3 +100,6 @@
 /* .span-display {
   display: block;
 } */
+#pointsContainer .on {
+  background-color: orange;
+}
