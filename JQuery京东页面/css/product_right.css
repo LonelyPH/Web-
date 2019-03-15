@@ -1,37 +1,35 @@
-
 /*右侧的相关信息*/
-#right_product
-{
+#right_product {
     width: 990px;
-    float:right;
+    float: right;
 }
 
 /*优惠套装*/
-#favorable_suit,#recommend
-{
+#favorable_suit,
+#recommend {
     margin-bottom: 10px;
     padding-top: 2px;
     background: url(../images/tab.png) 0 -41px repeat-x;
 }
-p.main_tabs
-{
-    padding:0px 8px;
+
+p.main_tabs {
+    padding: 0px 8px;
 }
-.m_content
-{
+
+.m_content {
     padding: 10px 0;
     border: 1px solid #ddd;
     border-top: 0;
-    clear:both;
-    overflow:hidden;
+    clear: both;
+    overflow: hidden;
 }
-.sub_tabs
-{
+
+.sub_tabs {
     margin-bottom: 10px;
-    overflow:hidden;
+    overflow: hidden;
 }
-.sub_tabs li
-{
+
+.sub_tabs li {
     padding: 0 15px;
     height: 16px;
     cursor: pointer;
@@ -39,28 +37,28 @@ p.main_tabs
     line-height: 16px;
     text-align: center;
     color: #005aa0;
-    float:left;
-    cursor:pointer;
+    float: left;
+    cursor: pointer;
 }
-.sub_tabs li.current
-{
-    border:0;
+
+.sub_tabs li.current {
+    border: 0;
     font-weight: 700;
     color: #333;
 }
-.sub_content
-{
-    overflow:hidden;
+
+.sub_content {
+    overflow: hidden;
 }
-.master
-{
+
+.master {
     float: left;
     width: 155px;
     padding: 0 0 10px 10px;
     overflow: hidden;
 }
-span.add
-{
+
+span.add {
     float: right;
     width: 24px;
     height: 22px;
@@ -71,43 +69,40 @@ span.add
     background-repeat: no-repeat;
     background-position: 0 -260px;
 }
-.master p
-{
+
+.master p {
     width: 100px;
     padding: 0 13px;
 }
-.suits
-{
-    width:620px;
-    float:left;
-    overflow-x: auto;
-    padding-bottom: 10px;    
-}
 
-.suits ul
-{
-    width:495px;
+.suits {
+    width: 620px;
+    float: left;
+    overflow-x: auto;
     padding-bottom: 10px;
 }
 
-.suits ul li
-{
+.suits ul {
+    width: 495px;
+    padding-bottom: 10px;
+}
+
+.suits ul li {
     width: 145px;
     padding-left: 20px;
-    float:left;
+    float: left;
 }
 
 
 
-.infos
-{
+.infos {
     float: left;
     width: 190px;
     line-height: 20px;
     padding-left: 10px;
 }
-.infos span
-{
+
+.infos span {
     float: left;
     width: 24px;
     height: 22px;
@@ -117,33 +112,35 @@ span.add
     background-repeat: no-repeat;
     line-height: 20px;
 }
-.infos h1
-{
-    height:36px;
+
+.infos h1 {
+    height: 36px;
     margin-left: 35px;
 }
-.infos h1 a
-{    
-    color:#005AA0;
-    font-weight:700;
+
+.infos h1 a {
+    color: #005AA0;
+    font-weight: 700;
 }
-.infos p,.infos .btns
-{
+
+.infos p,
+.infos .btns {
     margin-left: 35px;
-    color:#999;
-    line-height:20px;
+    color: #999;
+    line-height: 20px;
 }
-.empasis
-{
+
+.empasis {
     color: #E4393C;
 }
-.strike
-{
+
+.strike {
     text-decoration: line-through;
 }
- .btn_buy,  .btn_buy:hover
- {
-     display: block;
+
+.btn_buy,
+.btn_buy:hover {
+    display: block;
     width: 77px;
     height: 25px;
     margin-top: 10px;
@@ -154,65 +151,63 @@ span.add
     background-image: url(../images/iconlist_1.png);
     background-repeat: no-repeat;
     background-position: -166px -112px;
-    text-decoration:none;
- }
- /*推荐配件*/
-.main_tabs
-{
+    text-decoration: none;
+}
+
+/*推荐配件*/
+.main_tabs {
     height: 28px;
-    overflow:visible;
+    overflow: visible;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
     font: 14px/30px 'microsoft yahei';
     font-weight: 400;
-    cursor:pointer;
+    cursor: pointer;
 }
-.main_tabs li
-{
-    float:left;
-    text-align:center;
-    text-align:center;
+
+.main_tabs li {
+    float: left;
+    text-align: center;
+    text-align: center;
 }
-.main_tabs li a
-{
+
+.main_tabs li a {
     height: 30px;
     line-height: 28px;
     font: 14px/30px 'microsoft yahei';
     font-weight: 400;
-    padding:0 13px;
+    padding: 0 13px;
 }
 
-.main_tabs li.current
-{
-    height:34px;
+.main_tabs li.current {
+    height: 34px;
     color: #e4393c;
     background-color: #fff;
     margin-top: -6px;
-    margin-left:-1px;
+    margin-left: -1px;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
     border-top: 2px solid #e4393c;
 }
-.main_tabs li.current a
-{
+
+.main_tabs li.current a {
     height: 36px;
     line-height: 36px;
     padding: 0 12px;
     color: #e4393c;
 }
-#recommend .infos h1 a
-{    
-    color:#666;
-    font-weight:700;
+
+#recommend .infos h1 a {
+    color: #666;
+    font-weight: 700;
 }
 
-input[type="checkbox"]
-{
+input[type="checkbox"] {
     margin: 3px 3px 3px 4px;
-    vertical-align:middle;
+    vertical-align: middle;
 }
-.suits label
-{
+
+.suits label {
     color: #E4393C;
-    font-weight:bold;
+    font-weight: bold;
 }
