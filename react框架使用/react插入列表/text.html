@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>react虚拟dom插入列表</title>
+</head>
+<body>
+  <div id="exp1"><!-- 插入ul列表 -->
+
+  </div>
+
+  <script src="../reactjs/react.development.js"></script>
+  <script src="../reactjs/react-dom.development.js"></script>
+  <script src="../reactjs/babel.min.js"></script>
+
+  <script type="text/babel">
+    
+    //定义只读常量
+    const names = ['jQurey','zepto','angular','vue','react'];
+    //创建虚拟dom
+    const ul =(
+      <ul>
+        {
+          //使用map()方法将数据数组转换为标签数组
+          names.map((name,index) => <li key ={index}>{name}</li>)
+        }
+      </ul>
+    )
+    //渲染虚拟dom
+    ReactDOM.render(ul, document.getElementById('exp1'));
+  </script>
+
+</body>
+</html>
