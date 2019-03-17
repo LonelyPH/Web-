@@ -2,7 +2,8 @@
 /* bug:快速点击时会重启一个定时器，而所需要的nowLeft已经改变，所以造成切换时图片位置错误
 解决 设置标识isMoving 判断翻页过程是否正在进行，如果正在进行则让翻页过程中的点击失效，否则执行
 翻页 */
-
+//严格模式
+'use strict'
 $(function () {
   //获取所需JQ对象
   var $container = $('#container');
