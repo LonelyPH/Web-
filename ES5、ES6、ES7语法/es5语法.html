@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES5语法</title>
+</head>
+
+<body>
+  <script>
+    //Object对象方法扩展
+    var obj1 = {
+      names: 'damu',
+      age: 30
+    }
+    var obj2 = {};
+    obj2 = Object.create(obj1, {
+      sex: {
+        value: 'man',
+        writable: true, //true为允许改写，默认为false
+        configurable: true, //true为允许删除，默认为false
+        enumerable: true //true为允许使用for..in遍历，默认为false
+      }
+    }); /* 以制定对象为原型创建新对象 */
+    // console.log(obj2);
+    // obj2.sex = 'woman';
+    // console.log(obj2.sex);
+    // for (const i in obj2) {
+    //   console.log(i);
+    // }
+    // delete obj2.sex;
+    // console.log(obj2);
+
+    /* 为指定对象扩展多个属性 */
+    var obj3 = {
+      firstName: 'kobe',
+      lastName: 'bryant'
+    }
+    Object.defineProperties(obj3, {
+      fullName: {
+
+        //get方法用来获取扩展属性的值，指定的对象来调用此方法,访问扩展属性时调用get,否则不调用
+        get: function () {
+          //此处的this为指定的对象obj3
+          return this.firstName + ' ' + this.lastName;
+        },
+        //监听扩展属性的变化，当扩展属性变化时调用方法,将变化的值作为实参注入到set函数
+        set: function (data) {
+          //console.log(data);
+          var names = data.split(' ');
+          this.firstName = names[0];
+          this.lastName = names[1];
+        }
+      }
+    })
+    //给obj3的扩展属性重新赋值
+    obj3.fullName = 'tim duncan';
+    console.log(obj3.fullName);
+
+    /*  */
+  </script>
+</body>
+
+</html>

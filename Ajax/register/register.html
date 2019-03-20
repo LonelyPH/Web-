@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>注册</title>
+  <script src="ajaxTool.js"></script>
+</head>
+
+<body>
+  <h1>注册界面</h1>
+  <form action="register.php" method="post">
+    用户名：<input type="text" name="username" id="username">
+    <input type="button" value="验证用户名" id="btn">
+    <span id="result"></span>
+    <br>
+    密 码：<input type="password" name="password"><br>
+    <input type="submit" value="提交">
+  </form>
+
+  <script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+      var username = document.getElementById('username').value;
+      // console.log(username);测试
+      //checkUsername.php.php文件，将username传递给此文件  使用Ajax
+
+      /* 1、创建XMLHttpRequest对象 */
+      // var xhr = null;
+      // xhr = new XMLHttpRequest();
+      //兼容ie6及以下浏览器
+      // if (window.XMLHttpRequest) {
+      //   xhr = new XMLHttpRequest();
+      //   console.log("ie9");
+      // }
+      // else {
+      //   //IE6
+      //   xhr = new ActiveXObject("Microsoft.XMLHTTP");
+      //   console.log("ie5");
+      // }
+      // 调用对象的open方法  参数：1获取方式 url 同步或异步
+      //2、准备发送
+      // xhr.open("get","checkUsername.php?username=" + username,true);
+      /* xhr.open("post", "checkUsername.php", true); */
+      //执行发送  get请求参数为null 
+      // xhr.send(null); 
+      //post请求还需要设置请求头
+      /* xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); */
+      //post请求的参数放在请求体中，此处应将参数放在send中
+      /* xhr.send("username=" + username); */
+      //设置回调函数
+      /* xhr.onreadystatechange = function () {
+        //判断状态
+        //readyState=4表示数据解析完成
+        if (xhr.readyState == 4) {
+          //status=200表示响应成功 404为没有找到资源 500为服务器端错误
+          if (xhr.status == 200) {
+            var result = document.getElementById('result');
+            // console.log(result);
+            result.innerText = xhr.responseText;
+          }
+        }
+      }; */
+
+      // //封装函数测试
+      // var params = "username=" + username;
+      // MyAjax("post", "checkUsername.php", params, 'text', true, function (a) {
+      //   var span = document.getElementById('result');
+      //   span.innerText = a;
+      // });
+
+      // function MyAjax(type, url, params, dataType, async, CallBack) {
+      //   // 1、创建XMLHttpRequest对象
+      //   var xhr = null;
+      //   xhr = new XMLHttpRequest();
+      //   if (type == 'get') {
+      //     if (params && params != '') {
+      //       url += '?' + params;
+      //     }
+      //   }
+      //   xhr.open(type, url, async);
+      //   if (type == 'get') {
+      //     xhr.send(null);
+      //   } else if (type == 'post') {
+      //     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      //     xhr.send(params);
+      //   }
+      //   if (async) {
+      //     xhr.onreadystatechange = function () {
+      //       if (xhr.readyState == 4) {
+      //         if (xhr.status == 200) {
+      //           var result = null;
+      //           if (dataType == 'json') {
+      //             result = JSON.parse(xhr.responseText);
+      //           } else if (dataType == 'xml') {
+      //             result = xhr.responseXML;
+      //           } else {
+      //             result = xhr.responseText;
+      //           }
+      //           CallBack(result);
+      //         }
+      //       }
+      //     }
+      //   } else {
+      //     if (xhr.readyState == 4) {
+      //       if (xhr.status == 200) {
+      //         var result = null;
+      //         if (dataType == 'json') {
+      //           result = JSON.parse(xhr.responseText);
+      //         } else if (dataType == 'xml') {
+      //           result = xhr.responseXML;
+      //         } else {
+      //           result = xhr.responseText;
+      //         }
+      //         CallBack(result);
+      //       }
+      //     }
+      //   }
+      // }
+
+      MyAjaxWithObj({
+        // type: 'post',
+        url: 'checkUsername.php',
+        data: {
+          'username': username
+        },
+        dataType: 'text',
+        // async: true,
+        // CallBack: function (result) {
+        //   var span = document.getElementById('result');
+        //   span.innerText = result;
+        // }
+      });
+    };
+  </script>
+</body>
+
+</html>
