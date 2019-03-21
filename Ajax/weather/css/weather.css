@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+}
+
+#log {
+  width: 110px;
+  height: 39px;
+  float: left;
+  line-height: 39px;
+  text-align: center;
+  font-size: 24px;
+  color: orangered;
+  text-shadow: 3px 3px 3px rgba(0, 80, 0, .7);
+  display: inline-block;
+}
+
+#getCity {
+  width: 220px;
+  height: 25px;
+  margin: 5px 20px 5px 0;
+}
+
+#search {
+  width: 80px;
+  height: 25px;
+  border: 1px solid lawngreen;
+  border-radius: 5%;
+  box-shadow: 5px 5px 5px rgba(0, 180, 0, .5);
+  background-color: rgb(3, 248, 36);
+  cursor: pointer;
+}
+
+#box {
+  width: 510px;
+  height: 310px;
+  margin: 40px auto;
+  text-align: center;
+  background: rgb(52, 248, 3);
+}
+
+#city {
+  width: 510px;
+  height: 32px;
+  background-color: rgb(130, 250, 100);
+}
+
+#dataList {
+  width: 510px;
+  height: 40px;
+}
+
+#dataList li {
+  float: left;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-left: 4px;
+  background-color: skyblue;
+
+}
+
+#box1 {
+  width: 510px;
+  height: 160px;
+  background-color: rgb(51, 240, 136);
+}
+
+#weatherList {
+  height: 160px;
+}
+
+#weatherList li {
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin-top: 40px;
+  margin-left: 4px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#nextDay {
+  width: 80px;
+  height: 30px;
+  margin-top: 5px;
+  border: 1px solid lawngreen;
+  border-radius: 5%;
+  background-color: lightgreen;
+  cursor: pointer;
+}
+.gray {
+  color: gray;
+}

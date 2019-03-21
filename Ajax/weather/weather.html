@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>天气查询</title>
+    <link rel="stylesheet" href="./css/weather.css" />
+  </head>
+  <body>
+    <div id="box">
+      <div id="log">Weather</div>
+      <input class="gray" type="text" id="getCity" value="请输入正确的城市名" />
+      <input type="button" value="查询" id="search" />
+      <div id="city"></div>
+      <ul id="dataList">
+        <li>日期</li>
+        <li>星期</li>
+        <li>温度</li>
+        <li>白天天气</li>
+        <li>夜间天气</li>
+        <li>风向</li>
+      </ul>
+      <div id="box1"></div>
+      <input type="button" value="后一天" id="nextDay" />
+    </div>
+
+    <script src="./js/template-web.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script type="text/html" id="cityTemplate">
+      <h2>{{city}}</h2>
+    </script>
+    <script type="text/html" id="weatherTemplate">
+      <ul id="weatherList">
+        <li><span>{{date}}</span></li>
+        <li><span>{{week}}</span></li>
+        <li><span>{{temperature}}</span></li>
+        <li><span>{{dayTime}}</span></li>
+        <li><span>{{night}}</span></li>
+        <li><span>{{wind}}</span></li>
+      </ul>
+    </script>
+
+    <script>
+      //获取按钮元素
+      var $search = $("#search");
+      var $nextDay = $("#nextDay");
+      var $getCity = $("#getCity");
+      //文本框占位符处理
+      $getCity.focus(function() {
+        if (this.value != "") {
+          this.value = "";
+          this.className = "";
+        }
+      });
+      $getCity.blur(function() {
+        if (this.value.length === 0) {
+          this.value = "请输入正确的城市名";
+          this.className = "gray";
+        }
+      });
+      //注册点击事件
+      $search.click(function() {
+        // 获取input元素的value
+        var getCity = $getCity.val();
+        // if (!getCity) {
+        //   alert("请输入需要查询的城市！");
+        //   return;
+        // }
+        // console.log(getCity);
+        $.ajax({
+          type: "GET",
+          url: "./php/weather.php",
+          data: {
+            cityName: getCity
+          },
+          dataType: "json",
+          success: function(data) {
+            if (data.retCode == 200) {
+              var index = 0;
+              var cityDatas = data.result[0];
+              var weatherDatas = cityDatas.future[index];
+              var cityHtml = template("cityTemplate", cityDatas);
+              // console.log(weatherDatas);
+              var weatherHtml = template("weatherTemplate", weatherDatas);
+              var city = document.getElementById("city");
+              city.innerHTML = cityHtml;
+              var box1 = document.getElementById("box1");
+              box1.innerHTML = weatherHtml;
+
+              $nextDay.click(function() {
+                if (index <= cityDatas.future.length - 1) {
+                  index += 1;
+                } else {
+                  index = 0;
+                  alert("没有更多天气信息了！");
+                }
+                var weatherDatas = cityDatas.future[index];
+                var cityHtml = template("cityTemplate", cityDatas);
+                // console.log(weatherDatas);
+                var weatherHtml = template("weatherTemplate", weatherDatas);
+                var city = document.getElementById("city");
+                city.innerHTML = cityHtml;
+                var box1 = document.getElementById("box1");
+                box1.innerHTML = weatherHtml;
+              });
+            } else if (data.retCode == 20401) {
+              alert("城市参数为空!");
+            } else if ((data.retCode = 20402)) {
+              alert("抱歉，城市名错误或者暂时查询不到该城市的天气！");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
