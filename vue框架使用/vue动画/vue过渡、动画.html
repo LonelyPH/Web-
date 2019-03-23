@@ -1,45 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue过渡/动画</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="../vue_js/vue-2.6.7.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vue过渡/动画</title>
-  <link rel="stylesheet" href="main.css">
-</head>
+  <body>
+    <div id="app">
+      <div id="show-login" @click="show = !show" v-if="!show">
+        Show Login Form
+      </div>
 
-<body>
-
-  <div id="app">
-    <div id="show-login" @click="show = !show" v-if="show">
-      Show Login Form
+      <transition name="loginbox">
+        <div id="login-box" v-if="show">
+          <div id="hide-login" @click="show = !show">X</div>
+          <form action="#" id="login-form">
+            <h1>Welcome</h1>
+            <input type="text" placeholder="Username" class="inp" />
+            <input type="password" placeholder="Password" class="inp" />
+            <input type="submit" value="Login" class="login-sub" />
+          </form>
+        </div>
+      </transition>
     </div>
 
-
-    <transition name="loginbox">
-      <div id="login-box" v-if="!show">
-        <div id="hide-login" @click="show = !show">X</div>
-        <form action="#" id="login-form">
-          <h1>Welcome</h1>
-          <input type="text" placeholder="Username" class="inp">
-          <input type="password" placeholder="Password" class="inp">
-          <input type="submit" value="Login" class="login-sub">
-        </form>
-      </div>
-    </transition>
-  </div>
-
-  <script src="../vue_js/vue-2.6.7.js"></script>
-  <script>
-    var vm = new Vue({
-      el: '#app',
-      data: {
-        show: true,
-        left: 0
-      }
-    });
-  </script>
-</body>
-
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          show: false
+        }
+      });
+    </script>
+  </body>
 </html>
