@@ -18,13 +18,13 @@
 
 <script>
 export default {
-  name: "Login",
-  data() {
+  name: 'Login',
+  data () {
     return {
       show: false
-    };
+    }
   }
-};
+}
 </script>
 
 <style>

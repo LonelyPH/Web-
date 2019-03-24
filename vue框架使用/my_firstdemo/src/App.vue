@@ -5,13 +5,12 @@
 </template>
 
 <script>
-import Login from "./components/Login";
+import Login from './components/Login'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Login
   }
-};
+}
 </script>
-
