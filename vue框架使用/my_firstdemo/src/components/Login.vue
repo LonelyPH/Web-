@@ -5,7 +5,7 @@
     <transition name="loginbox">
       <div id="login-box" v-if="show">
         <div id="hide-login" @click="show = !show">X</div>
-        <form action="#" id="login-form">
+        <form action=javascript:; id="login-form">
           <h1>Welcome</h1>
           <input type="text" placeholder="Username" class="inp">
           <input type="password" placeholder="Password" class="inp">
