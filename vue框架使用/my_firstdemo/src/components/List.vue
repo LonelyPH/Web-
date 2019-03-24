@@ -2,7 +2,7 @@
   <div>
     <div class="col-md-8">
       <h3 class="reply">评论回复：</h3>
-      <h2 style="display: none">暂无评论，点击左侧添加评论！！！</h2>
+      <h2 v-if="comments.length === 0">暂无评论，点击左侧添加评论！！！</h2>
       <ul class="list-group">
         <!-- :comment="comment" 将comments属性传递给Item组件 -->
         <Item v-for="(comment, index) in comments" :key="index" :comment="comment" :remove="remove" :index="index"/>
