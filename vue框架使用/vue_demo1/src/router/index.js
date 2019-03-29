@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//引入路由组件
+/*
+ *路由组件引入
+ */
 import About from '../views/About.vue'
 import Home from '../views/Home.vue'
 import News from '../views/News.vue'
 import Message from '../views/Message.vue'
+import MessageList from '../views/MessageList.vue'
 
 Vue.use(VueRouter)
 //创建路由器对象
@@ -24,8 +27,15 @@ export default new VueRouter({
       component: Home,
       children: [
         {
-          path: "message",
-          component: Message
+          path: "/home/message",
+          component: Message,
+          children: [
+            {
+              path: "/home/message/list/:id", //:id占位符 params参数方式
+              // path: "/home/message/list", //query参数方式
+              component: MessageList
+            }
+          ]
         },
         {
           path: "/home/news",
