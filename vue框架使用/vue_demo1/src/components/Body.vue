@@ -1,15 +1,26 @@
 <template>
   <ul class="todo-main">    <!-- 插入子组件标签 并将子组件所需数据传递过去 -->
-    <Item v-for="(workName, index) in workNames" :key="index" :index="index" :workName="workName" :removeWorkName="removeWorkName"/>
+    <!-- <Item v-for="(workName, index) in workNames" :key="index" :index="index" :workName="workName" :removeWorkName="removeWorkName"/> -->
+    <Item v-for="(workName, index) in workNames" :key="index" :index="index" :workName="workName"/>
   </ul>
 </template>
 
 <script>
+import { mapState } from "vuex"
 import Item from "./Item"
+
 export default {
-  props: {    //*从父组件接受数据 指定数据名 数据类型
-    workNames: Array,
-    removeWorkName: Function
+  computed: {
+    //*vuex 将store中的状态数据映射到计算属性
+    ...mapState(["workNames"])
+  },
+  watch: {    //*监视
+    workNames: {
+      deep: true,  //*深度监视
+      handler: function (newValue) {    //*将当前最新的数据以JSON格式存储到本地
+        localStorage.setItem("workNames_key", JSON.stringify(newValue))
+      }
+    }
   },
   components: {   //*将子组件映射为标签
     Item

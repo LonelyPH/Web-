@@ -6,10 +6,6 @@
 
 <script>
 export default {
-  props: {    //从父组件接受数据 指定数据名 数据类型
-    workNames: Array,
-    add: Function
-  },
   data () {
     return {
       work: ''
@@ -26,7 +22,8 @@ export default {
         state: false,
         work
       }
-      this.add(workName)
+      //* vuex 触发actions
+      this.$store.dispatch("add", workName)
       this.work = ''
     }
   }

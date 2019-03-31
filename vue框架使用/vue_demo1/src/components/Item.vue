@@ -12,8 +12,7 @@
 export default {
   props: {    //*从父组件接受数据 指定数据名 数据类型
     workName: Object,
-    index: Number,
-    removeWorkName: Function
+    index: Number
   },
   data () {
     return {
@@ -24,7 +23,8 @@ export default {
   methods: {    //*方法
     removeWork (index) {    //*通过索引，删除一个选定的任务  当点击删除按钮时调用此方法
       if (confirm(`确定删除${this.workName.work}吗？`)) {
-        this.removeWorkName(index)
+        //*vuex 通知actions删除选中的项
+        this.$store.dispatch("removeWorkName", index)
       }
     },
     handleEnter (isEnter) {   //*处理鼠标出入li标签的方法，当鼠标进入或离开li标签时调用 改变li标签背景色 以及显示或隐藏删除按钮
